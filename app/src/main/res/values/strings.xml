@@ -1,0 +1,41 @@
+<resources>
+    <string name="app_name">TwitterStalk</string>
+
+    <string name="userid_textfield_hint">\@userId</string>
+
+    <string name="prepended_twitter_id">\@%1$s</string>
+
+    <!-- Button names -->
+    <string name="button_picture_based">Picture Based</string>
+    <string name="button_text_based">Text Based</string>
+    <string name="button_picture_and_text_based">Picture + Text</string>
+    <string name="button_both_analysis_seekbar_dialog">Go</string>
+
+    <!-- Menu items -->
+    <string name="action_main_search">Search</string>
+    <string name="action_main_history">History</string>
+
+    <!-- Progress indicator message -->
+    <string name="twitter_fetch_start_message">Fetching tweets data&#8230;</string>
+    <string name="twitter_fetch_complete_message">Twitter data fetching complete!</string>
+    <string name="twitter_no_tweets_message">Could not find any tweets for that ID!</string>
+    <string name="no_images_message">There were no images to process!</string>
+    <string name="vision_analysis_start_message">Sending images to Google for analysis..</string>
+    <string name="text_analysis_start_message">Sending texts to Google for analysis..</string>
+
+    <!-- Analysis Result Activities -->
+    <string name="image_analysis_num_images">"Analysis over %1$d recent images"</string>
+    <string name="text_analysis_num_tweets">"Analysis over %1$d recent tweets"</string>
+    <string name="composite_analysis_num_entities">"Analysis over %1$d images on %2$d recent tweets"</string>
+
+    <!-- Instruction message -->
+    <string name="both_analysis_seekbar_dialog_title">Please choose how much each should weight</string>
+
+    <!-- Activity names -->
+    <string name="title_activity_image_analysis">ImageAnalysisActivity</string>
+    <string name="title_activity_text_analysis">TextAnalysisActivity</string>
+
+    <!-- Base texts -->
+    <string name="image">Image</string>
+    <string name="text">Text</string>
+</resources>

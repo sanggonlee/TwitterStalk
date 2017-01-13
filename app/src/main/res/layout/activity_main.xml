@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/lightBlue"
+    android:orientation="vertical"
+    tools:context="com.example.sanggon.twitterstalk.activities.MainActivity">
+
+    <include android:id="@+id/toolbar"
+        layout="@layout/toolbar"/>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1.0">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:orientation="vertical">
+
+            <EditText
+                android:layout_width="@dimen/button_center_width"
+                android:layout_height="@dimen/button_center_height"
+                android:id="@+id/userid_search_field"
+                android:layout_gravity="center"
+                android:background="@color/white"
+                android:layout_margin="8dp"
+                android:padding="@dimen/edittext_padding"
+                android:textSize="@dimen/text_large"
+                android:textColor="@color/gray"
+                android:inputType="textNoSuggestions"
+                android:elevation="4dp"
+                android:hint="@string/userid_textfield_hint">
+            </EditText>
+
+            <TextView
+                android:layout_width="@dimen/button_center_width"
+                android:layout_height="wrap_content"
+                android:id="@+id/progress_text"
+                android:layout_margin="8dp"
+                android:padding="@dimen/edittext_padding"
+                android:textSize="@dimen/text_medium"
+                android:layout_gravity="center"
+                android:textColor="@color/white"
+                android:visibility="gone">
+            </TextView>
+
+            <GridView
+                android:layout_width="@dimen/button_center_width"
+                android:layout_height="wrap_content"
+                android:id="@+id/images_grid"
+                android:layout_margin="8dp"
+                android:paddingTop="@dimen/padding_small"
+                android:paddingBottom="@dimen/padding_small"
+                android:paddingLeft="@dimen/edittext_padding"
+                android:paddingRight="@dimen/edittext_padding"
+                android:layout_gravity="center"
+                android:numColumns="6"
+                android:visibility="gone">
+            </GridView>
+
+            <Button
+                android:layout_width="@dimen/button_center_width"
+                android:layout_height="@dimen/button_center_height"
+                android:id="@+id/button_picture_based"
+                android:layout_gravity="center"
+                android:background="@color/colorPrimary"
+                android:layout_margin="8dp"
+                android:textColor="@color/white"
+                android:text="@string/button_picture_based">
+            </Button>
+
+            <Button
+                android:layout_width="@dimen/button_center_width"
+                android:layout_height="@dimen/button_center_height"
+                android:id="@+id/button_text_based"
+                android:layout_gravity="center"
+                android:background="@color/colorPrimaryDark"
+                android:layout_margin="8dp"
+                android:textColor="@color/white"
+                android:text="@string/button_text_based">
+            </Button>
+
+            <Button
+                android:layout_width="@dimen/button_center_width"
+                android:layout_height="@dimen/button_center_height"
+                android:id="@+id/button_picture_and_text"
+                android:layout_gravity="center"
+                android:background="@color/lightLightBlue"
+                android:layout_margin="8dp"
+                android:textColor="@color/white"
+                android:text="@string/button_picture_and_text_based">
+            </Button>
+
+        </LinearLayout>
+    </RelativeLayout>
+</LinearLayout>
