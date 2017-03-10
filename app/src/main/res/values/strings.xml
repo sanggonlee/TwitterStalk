@@ -38,4 +38,7 @@
     <!-- Base texts -->
     <string name="image">Image</string>
     <string name="text">Text</string>
+
+    <!-- System warning -->
+    <string name="network_not_connected">Please make sure you have the network connection.</string>
 </resources>

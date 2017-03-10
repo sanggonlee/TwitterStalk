@@ -7,6 +7,8 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
 import android.graphics.Bitmap;
+import android.net.ConnectivityManager;
+import android.net.NetworkInfo;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
@@ -217,6 +219,24 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         mAnalysisCompositionButton.setOnClickListener(this);
     }
 
+    private boolean isConnectedToNetwork() {
+        ConnectivityManager cm = (ConnectivityManager)this.getApplicationContext()
+                .getSystemService(Context.CONNECTIVITY_SERVICE);
+        NetworkInfo activeNetwork = cm.getActiveNetworkInfo();
+        return activeNetwork != null && activeNetwork.isConnectedOrConnecting();
+    }
+
+    private boolean checkNetworkConnection() {
+        if (!isConnectedToNetwork()) {
+            Log.i(TAG, "Network not connected");
+            Toast.makeText(MainActivity.this, getResources().getString(R.string.network_not_connected), Toast.LENGTH_SHORT)
+                    .show();
+            return false;
+        }
+        Log.i(TAG, "Network connected");
+        return true;
+    }
+
     public void updateProgress(String msg) {
         Log.i(TAG, "update progress with text = " + msg);
 
@@ -250,6 +270,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     }
 
     public void pictureBasedAnalysis() {
+        if (!checkNetworkConnection()) {
+            return;
+        }
+
         String userId = mTwitterUserIdEditText.getText().toString();
         Log.i(TAG, "userId = " + userId);
 
@@ -259,6 +283,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     }
 
     public void textBasedAnalysis() {
+        if (!checkNetworkConnection()) {
+            return;
+        }
+
         String userId = mTwitterUserIdEditText.getText().toString();
         Log.i(TAG, "userId = " + userId);
 
@@ -268,6 +296,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     }
 
     public void compositeAnalysis() {
+        if (!checkNetworkConnection()) {
+            return;
+        }
+
         String userId = mTwitterUserIdEditText.getText().toString();
 
         // Start a series of intent services to perform image + text based analysis
